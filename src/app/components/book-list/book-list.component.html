@@ -1,0 +1,24 @@
+<h2>FMG Bookstore</h2>
+<table>
+  <thead>
+    <tr>
+        <th><input type="checkbox" (change)="toggleAllSelection($event)"/></th>
+      <th>Title</th>
+      <th>Author</th>
+      <th>Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let book of books">
+      <td>
+        <input type="checkbox" (change)="toggleSelection(book.bookId)" />
+      </td>
+      <td>
+        <a (click)="viewDetails(book.bookId)">{{ book.title }}</a>
+      </td>
+      <td>{{ book.author }}</td>
+      <td>{{ book.price | currency:'USD' }}</td>
+    </tr>
+  </tbody>
+</table>
+<button (click)="purchaseSelectedBooks()">Purchase Selected</button>

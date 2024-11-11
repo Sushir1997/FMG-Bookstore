@@ -1,0 +1,8 @@
+<div *ngIf="book">
+    <h2>{{ book.title }}</h2>
+    <p><strong>Author:</strong> {{ book.author }}</p>
+    <p><strong>Price:</strong> {{ book.price | currency:'USD' }}</p>
+    <p><strong>Status:</strong> {{ book.status }}</p>
+    <p><strong>Summary:</strong> {{ book.summary }}</p>
+  </div>
+  
